@@ -1,0 +1,240 @@
+{
+  "name": "Job Tracker",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://himalayas.app/jobs/api/search",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "q",
+              "value": "data analyst"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -144,
+        -64
+      ],
+      "id": "da9f8e37-99ff-495b-ac65-7af051bcdf7e",
+      "name": "Himalayan HTTP Request"
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "jobs",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        64,
+        -64
+      ],
+      "id": "40828c6a-7d7e-4d16-bcdb-22ccc160d19b",
+      "name": "Split Out 'jobs' "
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5e692394-66f7-4eea-b508-f56c2aa60104",
+              "name": "title",
+              "value": "={{ $json.title }}",
+              "type": "string"
+            },
+            {
+              "id": "64b772c0-60cb-4ce4-b88b-bb42cc6002c5",
+              "name": "company_name",
+              "value": "={{ $json.companyName }}",
+              "type": "string"
+            },
+            {
+              "id": "3064e595-8020-49c0-bd45-c2feaaf89106",
+              "name": "company_slug",
+              "value": "={{ $json.companySlug }}",
+              "type": "string"
+            },
+            {
+              "id": "97c2c791-ac0b-44ed-bdbc-d192e9530157",
+              "name": "employment_type",
+              "value": "={{ $json.employmentType }}",
+              "type": "string"
+            },
+            {
+              "id": "90551dc7-45e2-4cbc-be31-54d07b329571",
+              "name": "min_salary",
+              "value": "={{ $json.minSalary }}",
+              "type": "number"
+            },
+            {
+              "id": "3994b7e5-ddfa-490b-bce7-37ecdc892deb",
+              "name": "max_salary",
+              "value": "={{ $json.maxSalary }}",
+              "type": "number"
+            },
+            {
+              "id": "1bc553bd-3758-4a9b-8d55-5581ca19ebbe",
+              "name": "currency",
+              "value": "={{ $json.currency }}",
+              "type": "string"
+            },
+            {
+              "id": "0232e34f-1f16-409c-98dd-51746ee27db3",
+              "name": "seniority",
+              "value": "={{ $json.seniority[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "3619d28a-6780-4097-8807-99f2762bfbf5",
+              "name": "categories",
+              "value": "={{ $json.categories.join(', ') }}",
+              "type": "string"
+            },
+            {
+              "id": "a17e01fb-545d-4f90-a464-36c0ee6ceb5b",
+              "name": "location_restrictions",
+              "value": "={{ $json.locationRestrictions.join(', ') }}",
+              "type": "string"
+            },
+            {
+              "id": "89635806-55d3-4264-b69c-12cc47ccbd66",
+              "name": "pub_date",
+              "value": "={{ $json.pubDate }}",
+              "type": "string"
+            },
+            {
+              "id": "9f03b36e-2254-4297-b95a-c51b769529a9",
+              "name": "guid",
+              "value": "={{ $json.guid }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "include": "selected",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        272,
+        -64
+      ],
+      "id": "b34eabef-d7aa-43fa-b383-267ef63b2984",
+      "name": "Select Relevant Fields"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": {
+          "__rl": true,
+          "value": "raw_job_postings",
+          "mode": "list",
+          "cachedResultName": "raw_job_postings"
+        },
+        "columnToMatchOn": "guid",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.mySql",
+      "typeVersion": 2.5,
+      "position": [
+        480,
+        -64
+      ],
+      "id": "082470fa-5a2b-415b-beca-262fc2fea57a",
+      "name": "Insert or update rows in a table",
+      "credentials": {
+        "mySql": {
+          "id": "LFZRp1carqcmoptv",
+          "name": "MySQL account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 3
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -336,
+        -64
+      ],
+      "id": "36ab23d2-b256-473e-9594-fab57dfe8a95",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Himalayan HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Split Out 'jobs' ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Split Out 'jobs' ": {
+      "main": [
+        [
+          {
+            "node": "Select Relevant Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select Relevant Fields": {
+      "main": [
+        [
+          {
+            "node": "Insert or update rows in a table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Himalayan HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "a4812874-c300-4b7b-b052-54eec0eaf2c0",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "d6078b1f6bb3272136dfa1adb2cc56cde6c839cb8c4d835aed2c36104ccb924c"
+  },
+  "nodeGroups": [],
+  "id": "luZOUXm3ABYtZNkZ",
+  "tags": []
+}

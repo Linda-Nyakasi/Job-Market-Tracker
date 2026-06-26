@@ -1,0 +1,9 @@
+version: 2
+
+sources: 
+  - name: job_market_tracker
+    database: job_market_tracker
+    schema: job_market_tracker
+    tables: 
+      - name: raw_job_postings
+      

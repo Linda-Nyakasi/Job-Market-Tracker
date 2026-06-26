@@ -1,0 +1,109 @@
+[0m15:30:14.136824 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 15:30:14.474374 | becbdb83-8771-4789-b064-5a315e0d7b2e ==============================
+[0m15:30:14.474374 [info ] [MainThread]: Running with dbt=1.7.9
+[0m15:30:14.477443 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\USER 1\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt init job_market_tracker', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m15:30:14.482714 [debug] [MainThread]: Starter project path: C:\Users\USER 1\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m15:30:14.551414 [info ] [MainThread]: 
+Your new dbt project "job_market_tracker" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:30:14.552959 [info ] [MainThread]: Setting up your profile.
+[0m15:31:21.119314 [info ] [MainThread]: Profile job_market_tracker written to C:\Users\USER 1\.dbt\profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m15:31:21.123801 [debug] [MainThread]: Command `dbt init` succeeded at 15:31:21.122996 after 66.99 seconds
+[0m15:31:21.125666 [debug] [MainThread]: Flushing usage events
+==================== 2026-06-19T15:56:10.250813Z | 019ee098-ca88-72a3-84a1-0c47370564a4 ====================
+15:56:10.251059 [info ]: Installing dbt project and profile setup
+15:56:10.303906 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+15:56:10.318645 [info ]: Success Project created successfully!
+15:56:10.318834 [info ]: Info Project name: jaffle_shop
+15:56:10.319479 [info ]: Info Project directory: jaffle_shop
+15:56:10.325867 [info ]: Info Setting up your profile...
+15:56:10.327314 [info ]: Loading ~/.dbt/profiles.yml
+15:56:10.328398 [info ]: Info Creating new profile...
+[0m19:56:32.249927 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 19:56:32.354973 | be83f4a3-20d7-489c-b547-1a8617126876 ==============================
+[0m19:56:32.354973 [info ] [MainThread]: Running with dbt=1.7.9
+[0m19:56:32.355821 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\USER 1\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m19:56:32.356378 [info ] [MainThread]: dbt version: 1.7.9
+[0m19:56:32.356782 [info ] [MainThread]: python version: 3.13.14
+[0m19:56:32.357226 [info ] [MainThread]: python path: C:\Users\USER 1\AppData\Local\Programs\Python\Python313\python.exe
+[0m19:56:32.357608 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m19:56:32.467297 [info ] [MainThread]: Using profiles dir at C:\Users\USER 1\.dbt
+[0m19:56:32.468072 [info ] [MainThread]: Using profiles.yml file at C:\Users\USER 1\.dbt\profiles.yml
+[0m19:56:32.468831 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\USER 1\OneDrive\Documents\Personal\Data Projects\dbt Job Market Tracker\dbt_project.yml
+[0m19:56:32.470167 [info ] [MainThread]: adapter type: mysql
+[0m19:56:32.470641 [info ] [MainThread]: adapter version: 1.7.0
+[0m19:56:32.471250 [info ] [MainThread]: Configuration:
+[0m19:56:32.471773 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m19:56:32.472311 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m19:56:32.472852 [info ] [MainThread]: Required dependencies:
+[0m19:56:32.473426 [debug] [MainThread]: Executing "git --help"
+[0m19:56:32.523625 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m19:56:32.524289 [debug] [MainThread]: STDERR: "b''"
+[0m19:56:32.524727 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m19:56:32.525281 [info ] [MainThread]: Connection:
+[0m19:56:32.525847 [info ] [MainThread]:   server: localhost
+[0m19:56:32.526387 [info ] [MainThread]:   unix_socket: None
+[0m19:56:32.527102 [info ] [MainThread]:   port: 3306
+[0m19:56:32.527635 [info ] [MainThread]:   database: None
+[0m19:56:32.528166 [info ] [MainThread]:   schema: job_market_tracker
+[0m19:56:32.528689 [info ] [MainThread]:   user: root
+[0m19:56:32.529280 [info ] [MainThread]: Registered adapter: mysql=1.7.0
+[0m19:56:32.529978 [debug] [MainThread]: Acquiring new mysql connection 'debug'
+[0m19:56:32.530308 [debug] [MainThread]: Using mysql connection "debug"
+[0m19:56:32.530777 [debug] [MainThread]: On debug: select 1 as id
+[0m19:56:32.531117 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:56:32.557192 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.0 seconds
+[0m19:56:32.558304 [debug] [MainThread]: On debug: Close
+[0m19:56:32.558869 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m19:56:32.559446 [info ] [MainThread]: [31m1 check failed:[0m
+[0m19:56:32.560039 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\USER 1\OneDrive\Documents\Personal\Data Projects\dbt Job Market Tracker\dbt_project.yml> not found
+
+[0m19:56:32.560911 [debug] [MainThread]: Command `dbt debug` failed at 19:56:32.560762 after 0.35 seconds
+[0m19:56:32.561262 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m19:56:32.561607 [debug] [MainThread]: Flushing usage events
+[0m05:23:44.789787 [debug] [MainThread]: Got an exception trying to initialize tracking
+
+
+============================== 05:23:45.093847 | 4c1f6d9d-ea3d-4a0c-80c1-eb4a9cda2fdc ==============================
+[0m05:23:45.093847 [info ] [MainThread]: Running with dbt=1.7.9
+[0m05:23:45.096464 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\USER 1\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init job_market_tracker', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m05:23:45.125799 [debug] [MainThread]: Starter project path: C:\Users\USER 1\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\include\starter_project
+[0m05:23:45.261593 [info ] [MainThread]: 
+Your new dbt project "job_market_tracker" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m05:23:45.264964 [info ] [MainThread]: Setting up your profile.
+[0m05:24:16.086277 [debug] [MainThread]: Command `dbt init` succeeded at 05:24:16.085802 after 31.46 seconds
+[0m05:24:16.087291 [debug] [MainThread]: Flushing usage events

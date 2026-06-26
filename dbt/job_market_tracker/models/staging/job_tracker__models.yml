@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_job_tracker__raw_job_postings
+    description: Daily Data Analytics jobs posted on Himalayas' job website
+    columns:
+      - name: guid
+        tests:
+          - not_null
+          - unique
+      - name: title
+        tests:
+          - not_null
+      - name: company_name
+      - name: company_slug
+      - name: employment_type
+        tests:
+          - accepted_values:
+              values: ['Full Time', 'Part Time', 'Contractor', 'Temporary', 'Intern', 'Other']
+      - name: min_salary
+      - name: max_salary
+      - name: currency
+      - name: seniority
+        tests:
+          - accepted_values:
+              values: ['Intern', 'Entry-level', 'Mid-level', 'Senior']
+      - name: categories
+      - name: location_restrictions
+      - name: pub_date
+      - name: loaded_at
