@@ -261,6 +261,17 @@ CALCULATE(
 Last Data Ingestion = MAX('JobPostings'[loaded_at])
 ```
 
+**Mid-Level Salary Spread**  
+Calculates the financial gap between the average minimum and average maximum listed salaries specifically for mid-level roles.  
+This metric is dynamically injected into the Page 2 Smart Narrative visual to provide a direct signal of employer flexibility and potential negotiation margins within the market's highest-volume seniority tier.
+```
+Mid-Level Salary Spread = 
+CALCULATE(
+    [Avg Max Salary] - [Avg Min Salary],
+    'JobPostings'[seniority] = "Mid-level"
+)
+```
+
 **Top Skill**
 ```dax
 Top Skill =
@@ -302,7 +313,7 @@ Bottom left: Matrix: Salary by Seniority and Employment Type (Avg Min Salary, Av
 
 Top right: Clustered bar chart: Average Annual Salary Range by Seniority
 
-Bottom right: Narrative text box: Key Takeaway, plain-English interpretation of salary findings including market ceiling observations, negotiation delta, and data disclosure caveat
+Bottom right: Smart Narrative text box (Key Takeaway): Provides a plain-English interpretation of salary findings. It incorporates dynamic fields, such as the mid-level negotiation delta, alongside automated market ceiling observations and data disclosure caveats.
 
 **Layout principle:** each page follows a left-to-right information hierarchy: primary insight on the left, supporting detail on the right, matching natural reading flow and ensuring the most important numbers are visible first.
 
